@@ -4,23 +4,36 @@ import { renderComponent } from "@/utils/SidebarComponent"
 import { useState } from "react"
 import { FaTerminal } from "react-icons/fa6"
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa"
+import { HiMenu } from "react-icons/hi"
 import { socials } from "@/data/socials"
 import { options } from "@/data/options"
 
 const Home = () => {
 
   const [activeView, setActiveView] = useState("Overview")
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
-  
+
 
   return (
-    <div className="max-w-6xl mx-auto mt-6 text-gray-400 font-mono">
+    <div className="max-w-6xl mx-auto mt-2 md:mt-6 text-gray-400 font-mono px-2 md:px-0">
 
       {/* Main Panel */}
-      <div className="flex border border-gray-700 bg-[#0b0f14] h-[calc(100vh-120px)] overflow-hidden">
+      <div className="flex relative border border-gray-700 bg-[#0b0f14] h-[calc(100vh-100px)] md:h-[calc(100vh-120px)] overflow-hidden">
 
         {/* Sidebar */}
-        <div className="w-65 border-r border-gray-700 flex flex-col justify-between">
+        <div className={`
+          ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}
+          md:translate-x-0
+          fixed md:relative
+          z-30
+          w-64 md:w-65
+          h-full
+          border-r border-gray-700
+          bg-[#0b0f14]
+          flex flex-col justify-between
+          transition-transform duration-300 ease-in-out
+        `}>
 
           {/* Top section */}
           <div>
@@ -33,7 +46,10 @@ const Home = () => {
               {options.map((option) => (
                 <div
                   key={option.value}
-                  onClick={() => setActiveView(option.value)}
+                  onClick={() => {
+                    setActiveView(option.value)
+                    setIsSidebarOpen(false)
+                  }}
                   className={`flex items-center gap-2 p-3 cursor-pointer transition-colors text-sm
                   ${
                     activeView === option.value
@@ -129,16 +145,35 @@ const Home = () => {
         </div>
 
 
-        {/* Main Content */}
-        <div className="flex-1 flex flex-col">
+        {/* Overlay for mobile when sidebar is open */}
+        {isSidebarOpen && (
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50 z-20 md:hidden"
+            onClick={() => setIsSidebarOpen(false)}
+          />
+        )}
 
-          <div className="border-b border-gray-700 mx-4 p-4">
-            <h2 className="text-lg text-gray-200 tracking-wide">
+        {/* Main Content */}
+        <div className="flex-1 flex flex-col w-full">
+
+          <div className="border-b border-gray-700 p-3 md:p-4 mx-2 md:mx-4 flex items-center justify-between">
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+              className="md:hidden text-gray-400 hover:text-white text-xl mr-3"
+              aria-label="Toggle sidebar"
+            >
+              <HiMenu />
+            </button>
+
+            <h2 className="text-base md:text-lg text-gray-200 tracking-wide">
               @ {activeView}
             </h2>
+
+            <div className="md:hidden w-8"></div>
           </div>
 
-          <div className="flex-1 overflow-y-auto p-8">
+          <div className="flex-1 overflow-y-auto p-4 md:p-8">
             {renderComponent(activeView)}
           </div>
 

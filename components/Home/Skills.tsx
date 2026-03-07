@@ -14,8 +14,8 @@ export default function Skills() {
     <div className="font-mono text-sm">
 
       {/* Header */}
-      <div className="mb-6">
-        <h2 className="text-xl text-gray-200">Installed Packages</h2>
+      <div className="mb-4 md:mb-6">
+        <h2 className="text-lg md:text-xl text-gray-200">Installed Packages</h2>
         <p className="text-gray-500 text-xs">/usr/local/skills</p>
       </div>
 
@@ -32,21 +32,21 @@ export default function Skills() {
               {/* Category header */}
               <div
                 onClick={() => setOpen(isOpen ? null : index)}
-                className="flex items-center gap-3 p-3 cursor-pointer hover:bg-[#11151b]"
+                className="flex items-center gap-2 md:gap-3 p-2 md:p-3 cursor-pointer hover:bg-[#11151b]"
               >
                 {isOpen
                   ? <FaChevronDown className="text-xs text-gray-500" />
                   : <FaChevronRight className="text-xs text-gray-500" />
                 }
 
-                <span className="text-gray-200">{group.name}</span>
+                <span className="text-gray-200 text-sm md:text-base">{group.name}</span>
 
               </div>
 
 
               {/* Skills */}
               {isOpen && (
-                <div className="space-y-3 p-4 pt-2">
+                <div className="space-y-3 p-3 md:p-4 pt-2">
 
                   {group.skills.map((skill) => (
                     <div key={skill.name}>
