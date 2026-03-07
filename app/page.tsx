@@ -38,7 +38,7 @@ const Home = () => {
           {/* Top section */}
           <div>
 
-            <div className="p-3 text-sm tracking-wider text-blue-400 border-b border-gray-700">
+            <div className="p-3 text-sm tracking-wider text-blue-400 md:border-b border-gray-700">
               @HOME
             </div>
 
@@ -50,11 +50,11 @@ const Home = () => {
                     setActiveView(option.value)
                     setIsSidebarOpen(false)
                   }}
-                  className={`flex items-center gap-2 p-3 cursor-pointer transition-colors text-sm
+                  className={`flex items-center gap-2 p-3  cursor-pointer transition-colors text-sm
                   ${
                     activeView === option.value
-                      ? "bg-gray-800 text-white"
-                      : "hover:bg-gray-900"
+                      ? "md:bg-gray-800 text-white"
+                      : "md:hover:bg-gray-900"
                   }`}
                 >
                   <FaTerminal className="text-xs text-gray-500" />
@@ -67,7 +67,7 @@ const Home = () => {
 
 
           {/* Bottom connections */}
-          <div className="border-t border-gray-700 p-3">
+          <div className="md:border-t border-gray-700 p-3">
 
             <div className="flex items-center gap-2 text-gray-400 text-xs mb-3">
               
