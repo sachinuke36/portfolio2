@@ -16,7 +16,7 @@ export default function Contact() {
   }
 
   return (
-    <div className="font-mono max-w-6xl mx-auto mt-2 md:mt-6 text-sm px-2 md:px-0">
+    <div className="font-mono text-gray-400 max-w-6xl mx-auto mt-2 md:mt-6 text-sm px-2 md:px-0">
 
       {/* Header */}
       <div className="flex justify-between border border-gray-700 p-2 md:p-3 bg-[#0f131a]">
@@ -42,7 +42,7 @@ export default function Contact() {
           <input
             type="email"
             placeholder="your@email.com"
-            className="bg-transparent outline-none text-gray-300 w-full text-xs md:text-sm"
+            className="bg-transparent outline-none  w-full text-xs md:text-sm"
             required
           />
         </div>
@@ -53,7 +53,7 @@ export default function Contact() {
           <input
             type="text"
             placeholder="Connection request / Project discussion"
-            className="bg-transparent outline-none text-gray-300 w-full text-xs md:text-sm"
+            className="bg-transparent outline-none  w-full text-xs md:text-sm"
           />
         </div>
 
@@ -62,7 +62,7 @@ export default function Contact() {
           <textarea
             rows={10}
             placeholder="> Type your message here..."
-            className="w-full bg-transparent outline-none text-gray-300 resize-none text-xs md:text-sm"
+            className="w-full bg-transparent outline-none resize-none text-xs md:text-sm"
             required
           />
         </div>
