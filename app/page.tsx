@@ -31,7 +31,7 @@ const Home = () => {
           h-full
           border-r border-gray-700
           bg-[#0b0f14]
-          flex flex-col justify-between
+          flex flex-col gap-10
           transition-transform duration-300 ease-in-out
         `}>
 
