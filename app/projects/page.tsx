@@ -97,14 +97,16 @@ export default function Workbench() {
 
                     <a
                       className="flex items-center gap-2 hover:text-white"
-                      href="#"
+                      href={project.github}
+                      target="_blank"
                     >
                       <FaGithub /> src/repo
                     </a>
 
                     <a
                       className="hover:text-white"
-                      href="#"
+                      href={project.live}
+                      target="_blank"
                     >
                       deploy/live
                     </a>
