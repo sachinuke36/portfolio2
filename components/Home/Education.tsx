@@ -29,7 +29,7 @@ export default function Education() {
 
             </div>
             {/* title */}
-            <div className="flex items-center justify-between">
+            <div className="flex gap-2 flex-row items-center justify-between">
 
               <h3 className="text-gray-200">
                 {edu.degree}
