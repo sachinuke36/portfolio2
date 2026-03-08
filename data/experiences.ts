@@ -12,5 +12,18 @@ export const experiences = [
       "Implemented role-based access control reducing manual admin work by 30%."
     ]
   },
+  {
+     date: "May 2024 - Jun 2024",
+    level: "INFO",
+    location: "Remote",
+    role: "Full Stack Development",
+    company: "Encryptix",
+    points: [
+     "Interface for job seekers and employers to browse, filter, and post job listings.",
+     "Apply for jobs, and upload a resume.",
+     "MongoDB for data storage and APIs for server communication.",
+     "CRUD operations, user authentication, and authorization."
+    ]
+  }
 
 ]
